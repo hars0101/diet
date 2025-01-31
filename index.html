@@ -16,6 +16,610 @@
     <link rel="stylesheet" href="C:\Users\Admin\Downloads\files all\dronex-website.css">
     <style>
         
+        .logo-container {
+            width: 100%; /* Full width of the page */
+            background-color: #fff; /* Optional background for the logo area */
+        }
+        .logo {
+            width: 100%; /* Full width for the logo */
+            max-height: 200px; /* Adjust the max height if needed */
+            object-fit: cover; /* Ensures the image maintains its aspect ratio */
+        }
+        .container {
+            height: calc(100vh - 200px); /* Full height minus logo's height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center the button vertically */
+            align-items: center;
+        }
+        .circle-button {
+            width: 200px; /* Diameter of the button */
+            height: 200px;
+            background-color: #007BFF; /* Blue color */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Makes it circular */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px; /* Increased font size */
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .circle-button:hover {
+            transform: scale(1.1); /* Slight zoom effect */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+        }
+        #sectiona{
+            background-color: #ffe099;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        #sectionb {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: auto;
+            min-height: 100%;
+            object-fit: cover;
+        }
+
+        .video-text {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            color: #ffe099;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Logo2 on Top-Left */
+        .logo2 {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 2;
+        }
+        .logo2 img {
+            height: 150px;
+            object-fit: contain;
+        }        
+
+        /* Content Sections */
+        .section {
+            padding: 50px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .section:nth-child(even) {
+            background-color: #ffe099;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Enriqueta&display=swap');
+        .clg-name {
+            font-family: 'Enriqueta', sans-serif;
+            text-align: center;
+            font-size: 1.6vw;
+            letter-spacing: 1vw;
+            font-weight: bold;
+            height: 30px;
+        }
+
+        .sunny-morning-gradient {
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            background-size: cover;
+            color: black;
+        }
+
+
+        .sectionpage2 {
+            padding: 50px;
+        }
+        .h1page2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .ulpage2{
+            padding-left: 20px;
+        }
+        .lipage2{
+            margin-bottom: 10px;
+        }
+        .card {
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .scrollable {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .sectionpage2:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        .sectionpage2:nth-child(even) {
+            background-color: #ffe099;
+        }
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        /* Internships Section */
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+        .card {
+            margin: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;  /* Sets the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(67, 124, 224);  /* Dark gray color for the scrollbar thumb */
+    border-radius: 4px;  /* Optional: makes the scrollbar thumb rounded */
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;  /* Black background for the scrollbar track */
+}
+
+/* Navbar styles */
+.sticky-navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background-color: transparent;
+            padding: 30px 20px;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+        }
+
+        .sticky-navbar.scrolled {
+            background-color: #343a40;
+            padding: 10px 20px;
+            color: white;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .sticky-navbar a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .sticky-navbar.scrolled a {
+            color: white;
+        }
+
+        /* Hamburger menu alignment */
+        .navbar-toggler {
+            margin-left: auto;
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* Close icon for hamburger */
+        .navbar-toggler.open .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M6 6l18 18M6 24L24 6'/%3E%3C/svg%3E");
+        }
+
+        /* Default styles for larger screens */
+        #workshops1 {
+        display: flex;
+        justify-content: center; /* Centers the content horizontally */
+}
+
+.collogos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.colLogo {
+    width: 120px;  /* Adjust based on the size of the logos */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.colLogo:hover {
+    transform: scale(1.1); /* Adds a hover effect to enlarge the logos */
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .collogos {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .colLogo {
+        width: 100px;  /* Smaller logos on tablets */
+        margin: 10px 0;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .colLogo {
+        width: 80px;  /* Even smaller logos on mobile */
+    }
+}
+.logo2222{
+    height: 100px;
+    width: 350px;
+}
+.logo111{
+    height: 100px;
+    width: 200px;
+}
+.logo333{
+    height: 80px;
+    width: 200px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+}
+.newww{
+    height: 100vh;
+}
+.corr{
+    height: 70vh;
+}
+.corr img {
+    height: 70vh; /* Ensures images take the full height */
+    object-fit: auto; /* Maintains aspect ratio and fills the space */
+}
+.cer{
+    height: 90vh;
+}
+.cer img{
+    height: 90vh;
+}
+
+.hover-card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.pulse-button {
+    transition: all 0.3s ease;
+}
+
+.pulse-button:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.logo-hover {
+    transition: transform 0.3s ease;
+}
+
+.logo-hover:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Existing Styles */
+.video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+/* Add these new animations for coll*/
+.colLogo {
+transition: all 0.5s ease;
+filter: grayscale(100%);
+opacity: 0.8;
+}
+
+/* Hover Effects */
+.colLogo:hover {
+filter: grayscale(0%);
+opacity: 1;
+transform: scale(1.1) rotate(3deg);
+cursor: pointer;
+}
+
+/* Individual Logo Animations */
+.logo111 {
+animation: float 3s ease-in-out infinite;
+}
+
+.logo2222 {
+animation: float 3s ease-in-out infinite 0.5s;
+}
+
+.logo333 {
+animation: float 3s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+
+/* Scroll-triggered Animations */
+[data-aos="logo-anim"] {
+transform: scale(0);
+opacity: 0;
+transition-property: transform, opacity;
+}
+
+[data-aos="logo-anim"].aos-animate {
+transform: scale(1);
+opacity: 1;
+}
+/* Add these new animations for coll end */
+
+
+
+:root {
+--primary-color: #FF6B35;    /* Vibrant orange for highlights */
+--secondary-color: #004E89;  /* Deep navy blue for contrast */
+--accent-color: #FFD700;     /* Gold/yellow for accents */
+--background-light: #FFF5E6; /* Warm cream for backgrounds */
+--text-dark: #2D3047;        /* Dark navy for text */
+}
+.sunny-morning-gradient {
+background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+}
+.sectionpage2:nth-child(odd) {
+background-color: var(--background-light);
+}
+
+.sectionpage2:nth-child(even) {
+background: var(--secondary-color);
+color: white;
+}
+
+.card {
+background: var(--background-light);
+border: 1px solid var(--accent-color);
+}
+
+
+.btn-primary {
+background-color: var(--primary-color);
+border-color: var(--primary-color);
+}
+
+.hover-card:hover {
+border: 2px solid var(--accent-color);
+}
+
+.pulse-button:hover {
+background-color: var(--secondary-color);
+}
+
+/* Add a metallic accent for tech feel */
+.metallic-accent {
+color: #C0C0C0; /* Silver */
+}
+
+/* Cyber neon effect for headings */
+.neon-text {
+text-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
+}
+
+/* Depth-enhancing shadows */
+.deep-shadow {
+box-shadow: 0 8px 30px rgba(0, 78, 137, 0.2);
+}
+
+
+/* Updated CSS with custom classes */
+/* Custom Carousel Styles */
+.custom-carousel {
+height: 70vh;
+position: relative;
+overflow: hidden;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+margin: 20px auto;
+max-width: 800px;
+width: 100%;
+}
+
+/* Carousel Track */
+.custom-carousel-inner {
+display: flex;
+height: 100%;
+transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
+.custom-carousel-item {
+min-width: 100%;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+/*  background: #fff;  Fallback background used to change color*/
+}
+
+/* Image Styling */
+.custom-carousel-item img {
+width: auto;
+height: auto;
+max-width: 100%;
+max-height: 100%;
+object-fit: contain;
+padding: 20px;
+}
+
+/* Navigation Controls */
+.custom-carousel-control {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(255, 255, 255, 0.9);
+border: none;
+padding: 10px 15px;
+cursor: pointer;
+border-radius: 5px;
+font-size: 1.2rem;
+transition: all 0.3s ease;
+z-index: 2; /* Ensure controls stay on top */
+}
+
+.custom-carousel-control:hover {
+background: #FF6B35;
+color: white;
+}
+
+.custom-carousel-control.prev { left: 10px; }
+.custom-carousel-control.next { right: 10px; }
+
+/* Pagination Dots */
+.custom-carousel-dots {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+gap: 10px;
+z-index: 2; /* Ensure dots stay on top */
+}
+
+.custom-carousel-dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.5);
+border: none;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.custom-carousel-dot.active {
+background: #FF6B35;
+transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.custom-carousel {
+height: 300px;
+}
+
+.custom-carousel-control {
+padding: 8px 12px;
+font-size: 1rem;
+}
+}
+
+
     </style>
 </head>
 <body>
